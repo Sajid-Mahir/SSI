@@ -1,8 +1,6 @@
 
 # ACA-PY and Bifold
 
-## Prerequisite
-### _First try to complete the faber and alice tutorial which is done from terminal from edx. It is recommended that you try it locally instead of "Play With Docker"_
 
 NOTE: This tutorial was tested and Prepare using 
 -   Node version 16.15.0
