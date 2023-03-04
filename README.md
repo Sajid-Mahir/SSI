@@ -12,7 +12,102 @@ NOTE: This tutorial was tested and Prepare using
 -   ACA-PY github repo release 7.5( **There will be a major update 8.0 soon which will bring breaking changes** ) 
 
 
+# Section 01 - Prerequisite
 
+## 1. Running in play with docker
+
+The Alice/Faber demo is the (in)famous first verifiable credentials demo. Alice, a former student of Faber College ("Knowledge is Good"), connects with the College, is issued a credential about her degree and then is asked by the College for a proof. There are a variety of ways of running the demo. The easiest is in your browser using a site ("Play with VON") that let's you run docker containers without installing anything. Alternatively, you can run locally on docker (our recommendation), or using python on your local machine. Each approach is covered below.
+
+
+In your browser, go to the docker playground service [Play with Docker](https://labs.play-with-docker.com/). On the title screen, click "Start". On the next screen, click (in the left menu) "+Add a new instance".  That will start up a terminal in your browser. Run the following commands to start the Faber agent:
+
+```bash
+git clone https://github.com/hyperledger/aries-cloudagent-python
+cd aries-cloudagent-python/demo
+LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber
+```
+
+Now to start Alice's agent. Click the "+Add a new instance" button again to open another terminal session. Run the following commands to start Alice's agent:
+
+```bash
+git clone https://github.com/hyperledger/aries-cloudagent-python
+cd aries-cloudagent-python/demo
+LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo alice
+```
+
+Alice's agent is now running.
+
+Jump to the [Follow the Script](#follow-the-script) section below for further instructions.
+
+
+### Follow The Script
+
+With both the Alice and Faber agents started, go to the Faber terminal window. The Faber agent has created and displayed an invitation. Copy this invitation and paste it at the Alice prompt. The agents will connect and then show a menu of options:
+
+Faber:
+
+```
+    (1) Issue Credential
+    (2) Send Proof Request
+    (3) Send Message
+    (4) Create New Invitation
+    (T) Toggle tracing on credential/proof exchange
+    (X) Exit?
+```
+
+Alice:
+
+```
+    (3) Send Message
+    (4) Input New Invitation
+    (X) Exit?
+```
+
+#### Exchanging Messages
+
+Feel free to use the "3" option to send messages back and forth between the agents. Fun, eh? Those are secure, end-to-end encrypted messages.
+
+#### Issuing and Proving Credentials
+
+When ready to test the credentials exchange protocols, go to the Faber prompt, enter "1" to send a credential, and then "2" to request a proof.
+
+You don't need to do anything with Alice's agent - her agent is implemented to automatically receive credentials and respond to proof requests.
+
+Note there is an option "2a" to initiate a connectionless proof - you can execute this option but it will only work end-to-end when connecting to Faber from a mobile agent.
+
+## Running locally
+Now, we ill run the demo to our local machine. For this follow these steps:
+
+1. Cloe the repo: 
+
+```shell
+git clone https://github.com/hyperledger/aries-cloudagent-python
+```
+
+2. Go to ACA-PY directory using the command ```cd aries-cloudagent-python``` and prepare your laptop by installing the requirements: 
+
+```shell
+pip3 install -r demo/requirements.txt
+```
+3. Now, run the command go to the demo directory: ```cd demo```
+
+4. While in the demo directory run the command to start faber agent:
+
+```shell
+ LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber
+```
+
+5. Open another console in the demo directory and issue this command to start alice: 
+
+```shell
+LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo alice
+```
+6. Now, again jump to the [Follow the Script](#follow-the-script) section above for further instructions.
+	
+Everything works, then your laptop is ready for the development in full setup.
+
+
+# Section 02 -  Complete Setup
 ## Repository Setup
 
 1. create a folder. For this tutorial, we are naming it **SSI4WEB_TUTORIAL**
@@ -137,7 +232,7 @@ tunnels:
 ```
 Finally, you are done configuring the ACA-PY. However, we need to modify --endpoint and --wehbhooks but this is modifications are needed every time we start ngrok therefore, we will dicuss how to modify it in the **Running The Agent. Wallet and Controller** section.
 
-Part 3: Prepare Controller.
+
 
 
 
