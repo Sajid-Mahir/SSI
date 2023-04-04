@@ -130,7 +130,7 @@ git clone https://github.com/hyperledger/aries-mobile-agent-react-native
 
 ### Part 1: Configuring the mobile agent
 
-1. Extract the Aries Mobile Agent Config Zip file and you will find there is a directory called: Aries Mobile Agent Config. Within this directory, there are three things: a directory named bcovrin-test-net, a file called index.js and another file called AgentService.js. 
+1. Check the Aries Mobile Agent Config Zip file and you will find there is a directory called: Aries Mobile Agent Config. Within this directory, there are three things: a directory named bcovrin-test-net, a file called index.js and another file called AgentService.js. 
 
 2. Copy the bcovrin-test-net directory to the the ```core/configs/ledgers/indy``` directory of the Aries Mobile Agent React Native codebase. 
 
