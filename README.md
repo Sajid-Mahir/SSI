@@ -156,7 +156,7 @@ Your Aries Mobile Agent React Native is now ready to run. We will run after conf
 * Currently npm has some peer dependency issue. HOwever, it can be used by resolving it. But, since bifold shifting towards yarn. we will try to use yarn for Aries Mobile Agent React Native from now on. 
 
 ### Part 2: Controller Setup
-1. Extract the instruction.zip file, you will get a directory called ```MySSIController```. This directory, contains the code of aca-py controller. 
+1. Now, go to the directory called ```MySSIController```. This directory, contains the code of aca-py controller. 
 2. Move the directory where your ACA-PY and Aries Mobile Agent React Native resides.
 
 3. Now, go to the **MySSIController** director from the terminal and run the  command below. But make sure the terminal path is inside the MySSIController directory.
