@@ -132,6 +132,7 @@ git clone https://github.com/hyperledger/aries-mobile-agent-react-native
 
 ### Prerequisite
 Before configuring the mobile agent, you must ensure that:
+-   Android API 29.0.3 or lower. I tested the tutorial using 25 and 29.
 -   You have the android sdk build-tools version 30.0.2, 30.0.3 and 33.0.1
 -   You have android sdk NDK version 21.4.7075529
 Easiest way you can find and add these two tools is from the android studio. Open the SDK manager and find Android SDK. From there you need to tick the specified versions and apply it.
@@ -436,5 +437,11 @@ LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber
 ```
 
 This will take few minutes and should run faber and show a QR code to the terminal.
+
+
+
+
+
+
 
 
