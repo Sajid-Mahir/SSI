@@ -130,11 +130,24 @@ git clone https://github.com/hyperledger/aries-mobile-agent-react-native
 
 ### Part 1: Configuring the mobile agent
 
+### Prerequisite
+Before configuring the mobile agent, you must ensure that:
+-   You have the android sdk build-tools version 30.0.2, 30.0.3 and 33.0.1
+-   You have android sdk NDK version 21.4.7075529
+Easiest way you can find and add these two tools is from the android studio. Open the SDK manager and find Android SDK. From there you need to tick the specified versions and apply it.
+-   In addition you need the set environment path for anrdoid. Alternative you can create a file inside the ```packages>legacy>app>android``` and name it ```local.properties``` and paste the android sdk path in the mentioned format below:
+```shell
+sdk.dir = YOUR_PATH_TO_ANDROID_SDK_FOLDER
+```
+
+**NOTE:** After you are ready with the Prerequisite you need to remember.  
 1. Check the Aries Mobile Agent Config Zip file and you will find there is a directory called: Aries Mobile Agent Config. Within this directory, there are three things: a directory named bcovrin-test-net, a file called index.js and another file called AgentService.js. 
 
-2. Copy the bcovrin-test-net directory to the the ```core/configs/ledgers/indy``` directory of the Aries Mobile Agent React Native codebase. 
+2. Paste the bcovrin-test-net directory to the the ```packages/legacy/core/configs/ledgers/indy``` directory of the Aries Mobile Agent React Native codebase. 
 
-3. Also, copy content of index.js file from ```Aries Mobile Agent Config``` and paste it into the index.ts file within the ```core/configs/ledgers/indy``` directory of the Aries Mobile Agent React Native codebase. While pasting it into the index.ts file remove the previous content of ```index.ts``` file.
+3. Also, copy content of index.js file from ```Aries Mobile Agent Config``` and paste it into the index.ts file within the ```packages/legacy/core/configs/ledgers/indy``` directory of the Aries Mobile Agent React Native codebase. While pasting it into the index.ts file remove the previous content of ```index.ts``` file.
+
+4. from the terminal go to the ```packages/legacy/core/configs/ledgers/indy``` directory of the Aries Mobile Agent React Native codebase. While pasting it into the index.ts file remove the previous content of ```index.ts``` file.
 
 4. from the terminal go to the aries-mobile-agent-react-native directory and run:
 ```shell
@@ -348,14 +361,14 @@ List of devices attached
 ```
 
 #### 2. Running the mediator and building
-1. Open the terminal and make sure your current path is in: ```aries-mobile-agent-react-native/app```. Now Run:
+1. Open the terminal and make sure your current is pointing the the ```app``` directory inside ```legacy```. Now Run:
 ```shell
 yarn start
 ```
 
 This will start the mediator.
 
-2. If you want to build the mobile agent, open a new terminal and again make sure the terminal path is: ```aries-mobile-agent-react-native/app```. Now run:
+2. If you want to build the mobile agent, open a new terminal and again go to the same terminal path and run:
 
 ```shell
 yarn run android
