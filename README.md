@@ -438,9 +438,3 @@ LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber
 This will take few minutes and should run faber and show a QR code to the terminal.
 
 
-
-
-
-
-
-
