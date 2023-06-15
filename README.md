@@ -73,7 +73,7 @@ You don't need to do anything with Alice's agent - her agent is implemented to a
 
 Note there is an option "2a" to initiate a connectionless proof - you can execute this option but it will only work end-to-end when connecting to Faber from a mobile agent.
 
-## Running locally
+## Running locally using docker
 Now, we ill run the demo to our local machine. For this follow these steps:
 
 1. Cloe the repo: 
@@ -110,21 +110,31 @@ Everything works, then your laptop is ready for the development in full setup.
 
 1. create a folder. For this tutorial, we are naming it **SSI4WEB_TUTORIAL**
 
-2. go to the **SSWEB_TUTORIAL** folder and from there Clone the repo: 
+2. go to the **SS4WEB_TUTORIAL** folder and from there Clone/download the repo: 
+
 ```shell
-git clone https://github.com/hyperledger/aries-cloudagent-python
+git clone https://github.com/YEASIN49/SSI4WEB_SAMPLE_TUTORIAL-01-Connection-Building-and-Playing-with-demo.git
 ```
+
+The mentioned github repository contains some important files which are:
+
+-  aries-mobile-agent-react-native: This is the mobile wallet/end agent
+-    aries-cloudagent-python: This is the aca-py agent that we will use
+-    MySSIController: This is the controller through which we will utilise the aca-py agent's API and intereact with our agent and wallet from browser
+-    Aries Mobile Agent Config: This file contains some data/configuration that we need for the wallet configuration. 
+
+After cloning/downloading, go to aries-cloudagent-python directory. You can use the command ```cd SSI4WEB_SAMPLE_TUTORIAL-01-Connection-Building-and-Playing-with-demo/aries-cloudagent-python``` for this. Now prepare your laptop by installing the requirements below. NOTE: Make sure your terminal path is now pointing at at aries-cloudagent-python directory like the image below:
+
+![App Screenshot](./_readme_images/1_aca-py-path.png)
+
+Now, run the commands below.
 	
 3. Now, Prepare your laptop by installing the requirements: 
 
 ```shell
 pip3 install -r aries-cloudagent-python/demo/requirements.txt
 ```
-4. Now we will clone aries react native ( bifold ) wallet using:
 
-```shell
-git clone https://github.com/hyperledger/aries-mobile-agent-react-native
-```
 
 ## Configuring The Frameworks Together
 
@@ -228,7 +238,7 @@ ngrok config add-authtoken REPLACE_THIS_WORD_BY_A_RANDOM_TOKEN
 ```
 This command, will create a config file called ```ngrok.yml``` in your ```Home/.config/ngrok```. Make sure, you are viewing the hidden files inside ```Home``` directory because the ```.confi``` file is a hidden file.
 
-**NOTE:** Depending on the ubuntu version and distribution the location of the ngrok.yml file may vary. Therefore, if you don't find the file, try searching it from the terminal. I am using ubuntu v22.4.0.
+**NOTE:** Depending on the ubuntu version and distribution and also the way you install it, the location of the ngrok.yml file may vary. Therefore, if you don't find the file, try searching it from the terminal. I am using ubuntu v22.4.0.
 
 8. Now, copy the content below and paste it to the mentioned ```ngrok.yml``` file
 ```yml
@@ -278,27 +288,13 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
 ```
 
 ### 2. Run Controller
-1. Copy the ngrok link respect to the http://localhost:9999 . The link should be similar to the ```https://1d54-103-110-217-248.in.ngrok.io``` mentioned above.
 
-2. In **MySSIController** directory, there is a file called **server.js**. Find ```service_endpoint``` which holds the endpoint of controller. here it is localhost:9999. 
-
-3. Now, copy the ngrok link respective to http://localhost:9999 and paste it the ```service_endpoint```. Which should be similar to this:
-
-```shell
-const data = {
-    "my_label": "Web.Agent",
-    "service_endpoint": "https://1d54-103-110-217-248.in.ngrok.io"
-};
-```
-
-**Note:** You will find two places where you need to add your ngrok url in the **server.js** file.
-
-4. Now, start the local mongoDB service using the command: 
+1. Firts, start the local mongoDB service using the command: 
 ```shell
 service mongod start
 ```
 
-5. Fnally, run the command:
+2. Next, run the server using:
 
 ```shell
 npm start
@@ -436,7 +432,7 @@ After adding, these two parameters, you should have a similar result like below:
 LEDGER_URL=http://dev.greenlight.bcovrin.vonx.io ./run_demo faber
 ```
 
-This will take few minutes and should run faber and show a QR code to the terminal.
+This will take few minutes and should run faber and show a QR code to the terminal. You may see this video provided in this repo to understand, How the process works.
 
 
 

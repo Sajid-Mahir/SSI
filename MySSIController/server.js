@@ -318,7 +318,7 @@ app.get('/newCon', async function(req,res) {
 	console.log("At newConn!")
 	const data = {
 		"my_label": "Web.Agent",
-		"service_endpoint": "https://25d8-2a02-908-e37-bfa0-ea1a-9e5-28c6-cfcd.ngrok.io"
+		// "service_endpoint": "https://25d8-2a02-908-e37-bfa0-ea1a-9e5-28c6-cfcd.ngrok.io"
 	};
 	const agentService = require('./services/AgentService');
 
@@ -941,7 +941,7 @@ app.get('/generate', function(req,res) {
 		// "recipient_keys": [
 		//   "H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
 		// ],
-		"service_endpoint": "https://25d8-2a02-908-e37-bfa0-ea1a-9e5-28c6-cfcd.ngrok.io"
+		// "service_endpoint": "https://25d8-2a02-908-e37-bfa0-ea1a-9e5-28c6-cfcd.ngrok.io"
 	};
 	var returnData;
 	axios.post('http://127.0.0.1:8021/connections/create-invitation', data)
@@ -1171,13 +1171,15 @@ app.get('/activeCon', async (req, res) => {
 app.get('/logout', async (req, res) => {
 	console.log("Now at logout...")
 	req.session.destroy();
-	res.redirect("/");
 	global.connectionStatus = null;
 	global.credDef = null;
 	global.credStatus = null;
 	global.proofStatus = null;
 	global.retrievedAttribute = null;
 	// res.render("index")
+	res.clearCookie("conID")
+	res.clearCookie("memoName")
+	res.redirect("/");
 })
 
 // app.get('/page1', async (req, res) => {
