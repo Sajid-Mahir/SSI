@@ -5,7 +5,7 @@
 
 # the following will auto-respond on connection and credential requests, but not proof requests
 PYTHONPATH=.. ../bin/aca-py start \
-   --endpoint https://2a5a-103-103-98-37.ngrok-free.app \
+   --endpoint  https://c756-123-136-28-130.ngrok-free.app \
    --label faber.agent \
    --inbound-transport http 0.0.0.0 8020 \
    --outbound-transport http \
@@ -16,7 +16,7 @@ PYTHONPATH=.. ../bin/aca-py start \
    --wallet-key faber.agent916333 \
    --preserve-exchange-records \
    --auto-provision \
-   --seed aF5s4d4bkfhvolsdf135A5sdf3Sfsf46 \
+   --seed PXSPFFCPQVFAHAJWQOVGUFDCKFALLSRB \
    --genesis-url http://dev.greenlight.bcovrin.vonx.io/genesis \
    --trace-target log \
    --trace-tag acapy.events \
@@ -29,7 +29,7 @@ PYTHONPATH=.. ../bin/aca-py start \
    --auto-respond-credential-offer \
    --auto-respond-credential-request \
    --auto-store-credential \
-   --webhook-url https://2d41-103-103-98-37.ngrok-free.app/webhooks \
+   --webhook-url https://bcef-123-136-28-130.ngrok-free.app/webhooks \
 
 # set these for full auto
 #   --auto-respond-presentation-proposal \

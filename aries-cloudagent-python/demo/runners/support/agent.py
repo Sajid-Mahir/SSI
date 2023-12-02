@@ -327,7 +327,8 @@ class DemoAgent:
 
     def get_agent_args(self):
         result = [
-            ("--endpoint", "https://2a5a-103-103-98-37.ngrok-free.app"),
+            ("--endpoint", "https://c756-123-136-28-130.ngrok-free.app"),
+            # ("--endpoint", "https://2a5a-103-103-98-37.ngrok-free.app"),
             ("--label", self.label),
             "--auto-ping-connection",
             "--auto-respond-messages",
@@ -341,7 +342,7 @@ class DemoAgent:
             "--preserve-exchange-records",
             "--auto-provision",
             "--public-invites",
-            ("--webhook-url", "https://2d41-103-103-98-37.ngrok-free.app/webhooks"),
+            ("--webhook-url", "https://bcef-123-136-28-130.ngrok-free.app/webhooks"),
         ]
         if self.aip == 20:
             result.append("--emit-new-didcomm-prefix")
@@ -358,7 +359,7 @@ class DemoAgent:
         if self.genesis_txn_list:
             result.append(("--genesis-transactions-list", self.genesis_txn_list))
         if self.seed:
-            result.append(("--seed", "aF5s4d4bkfhvolsdf135A5sdf3Sfsf46"))
+            result.append(("--seed", "PXSPFFCPQVFAHAJWQOVGUFDCKFALLSRB"))
         if self.storage_type:
             result.append(("--storage-type", self.storage_type))
         if self.timing:
