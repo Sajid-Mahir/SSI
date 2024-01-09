@@ -688,4 +688,4 @@ Schema:
   }
   ```
 - The whole command extracts and assigns "https://0bf2-123-136-28-130.ngrok-free.app"
-> The URL corresponds to the webhook url that we use in our controller.
+> The URL corresponds to the endpoint url that we use in our controller.
